@@ -1,0 +1,6 @@
+@Assesment_DiegoFelipeSalamancaRojas_HostAddress = http://localhost:5017
+
+GET {{Assesment_DiegoFelipeSalamancaRojas_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
