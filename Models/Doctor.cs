@@ -11,6 +11,18 @@ namespace Assesment_DiegoFelipeSalamancaRojas.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string FirstName { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string LastName { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string Email { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string PhoneNumber { get; set; }
 
         [Required]
         [MaxLength(100)]
@@ -20,6 +32,11 @@ namespace Assesment_DiegoFelipeSalamancaRojas.Models
         [MaxLength(50)]
         public string LicenseNumber { get; set; }
 
-        public string Availability { get; set; } // JSON for dynamic availability
+        public List<Availability> Availabilities { get; set; }
+
+        public List<Appointment> Appointments { get; set; } = new List<Appointment>();
+
+        public List<MedicalRecord> MedicalRecords { get; set; } = new List<MedicalRecord>(); 
+
     }
 }

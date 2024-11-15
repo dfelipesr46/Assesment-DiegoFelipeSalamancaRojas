@@ -15,10 +15,10 @@ namespace Assesment_DiegoFelipeSalamancaRojas.Controllers
             _authService = authService;
         }
 
-        [HttpPost("register")]
-        public async Task<IActionResult> Register([FromBody] UserRegistrationDto userRegistrationDto)
+        [HttpPost("register/doctor")]
+        public async Task<IActionResult> RegisterDoctor([FromBody] DoctorRegistrationDto doctorRegistrationDto)
         {
-            var result = await _authService.RegisterUserAsync(userRegistrationDto);
+            var result = await _authService.RegisterDoctorAsync(doctorRegistrationDto);
             if (!result.Success)
             {
                 return BadRequest(result.Message);
@@ -26,13 +26,13 @@ namespace Assesment_DiegoFelipeSalamancaRojas.Controllers
             return Ok(result);
         }
 
-        [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
+        [HttpPost("register/patient")]
+        public async Task<IActionResult> RegisterPatient([FromBody] PatientRegistrationDto patientRegistrationDto)
         {
-            var result = await _authService.LoginUserAsync(userLoginDto);
+            var result = await _authService.RegisterPatientAsync(patientRegistrationDto);
             if (!result.Success)
             {
-                return Unauthorized(result.Message);
+                return BadRequest(result.Message);
             }
             return Ok(result);
         }

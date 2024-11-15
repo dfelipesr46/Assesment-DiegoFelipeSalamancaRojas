@@ -9,6 +9,7 @@ namespace Assesment_DiegoFelipeSalamancaRojas.DTOs
     {
         public int AppointmentId { get; set; }
         public int DoctorId { get; set; }
+        public string PatientName { get; set; }
         public DateTime Date { get; set; }
         public TimeSpan Time { get; set; }
         public string Reason { get; set; } = string.Empty;

@@ -30,6 +30,9 @@ namespace Assesment_DiegoFelipeSalamancaRojas.Models
         [MaxLength(50)]
         public string Status { get; set; } // "pending", "confirmed", "canceled"
 
+        public TimeSpan Duration { get; set; } // Nueva propiedad
+
+
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
